@@ -75,25 +75,25 @@ app.post("/api/users", async (req: Request, res: Response) => {
     }
 });
 
-// // "GET" All User
-// app.get("/api/users", async (req: Request, res: Response) => {
-//     try {
-//         const result = await pool.query(`
-//             SELECT * FROM users  
-//         `);
-//         res.status(200).json({
-//             success: true,
-//             message: "Users retrieved successfully!",
-//             data: result.rows,
-//         });
-//     } catch (error: any) {
-//         res.status(500).json({
-//             success: false,
-//             message: error.message,
-//             error: error,
-//         });
-//     }
-// });
+// "GET" All User
+app.get("/api/users", async (req: Request, res: Response) => {
+    try {
+        const result = await pool.query(`
+            SELECT * FROM users  
+        `);
+        res.status(200).json({
+            success: true,
+            message: "Users retrieved successfully!",
+            data: result.rows,
+        });
+    } catch (error: any) {
+        res.status(500).json({
+            success: false,
+            message: error.message,
+            error: error,
+        });
+    }
+});
 
 
 // // "GET" Single user
