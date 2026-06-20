@@ -1,0 +1,103 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Background Card -->
+  <rect width="120" height="120" rx="24" fill="url(#bg)">
+    <animate attributeName="opacity"
+             values="0.95;1;0.95"
+             dur="3s"
+             repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Glow Circle -->
+  <circle cx="60" cy="62" r="38" fill="url(#glow)">
+    <animate attributeName="r"
+             values="36;42;36"
+             dur="2.5s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Profile Icon -->
+  <circle cx="60" cy="48" r="16" fill="url(#avatarGrad)"/>
+
+  <!-- Body -->
+  <path d="M35 92C38 78 50 72 60 72C70 72 82 78 85 92"
+        stroke="url(#lineGrad)"
+        stroke-width="6"
+        stroke-linecap="round"/>
+
+  <!-- Floating Info Dots -->
+  <circle cx="28" cy="30" r="2.5" fill="#00E5FF">
+    <animate attributeName="opacity"
+             values="0;1;0"
+             dur="1.4s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="92" cy="34" r="2.5" fill="#FF4ECD">
+    <animate attributeName="opacity"
+             values="0;1;0"
+             dur="1.8s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="96" cy="70" r="2.5" fill="#FFD700">
+    <animate attributeName="opacity"
+             values="0;1;0"
+             dur="2s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="24" cy="72" r="2.5" fill="#7C4DFF">
+    <animate attributeName="opacity"
+             values="0;1;0"
+             dur="1.6s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Small moving particles -->
+  <circle cx="50" cy="18" r="1.8" fill="#00FFA3">
+    <animate attributeName="cy"
+             values="18;14;18"
+             dur="2s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="70" cy="18" r="1.8" fill="#00E5FF">
+    <animate attributeName="cy"
+             values="18;14;18"
+             dur="2.2s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Definitions -->
+  <defs>
+
+    <!-- Background -->
+    <linearGradient id="bg" x1="0" y1="0" x2="120" y2="120">
+      <stop offset="0%" stop-color="#1a1b27"/>
+      <stop offset="50%" stop-color="#24283b"/>
+      <stop offset="100%" stop-color="#1f2335"/>
+    </linearGradient>
+
+    <!-- Glow -->
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(60 60) rotate(90) scale(50)">
+      <stop stop-color="#00E5FF" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Avatar -->
+    <radialGradient id="avatarGrad">
+      <stop offset="0%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#FF4ECD"/>
+    </radialGradient>
+
+    <!-- Line -->
+    <linearGradient id="lineGrad" x1="40" y1="70" x2="80" y2="95">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#7C4DFF"/>
+    </linearGradient>
+
+  </defs>
+
+</svg>

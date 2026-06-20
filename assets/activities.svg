@@ -1,0 +1,131 @@
+<svg width="120" height="120" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- Animated Background Card -->
+  <rect width="120" height="120" rx="24" fill="url(#bgGradient)">
+    <animate attributeName="opacity"
+             values="0.95;1;0.95"
+             dur="3s"
+             repeatCount="indefinite"/>
+  </rect>
+
+  <!-- Glow -->
+  <circle cx="60" cy="72" r="38" fill="url(#glow)">
+    <animate attributeName="r"
+             values="34;40;34"
+             dur="2.5s"
+             repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Sparkles & Flame Particles -->
+  <circle cx="30" cy="90" r="2" fill="#00E5FF">
+    <animate attributeName="cy" values="75;115" dur="1.2s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0" dur="1.2s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="90" cy="85" r="1.8" fill="#FF4ECD">
+    <animate attributeName="cy" values="70;110" dur="1.5s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0" dur="1.5s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="45" cy="100" r="1.5" fill="#00FFA3">
+    <animate attributeName="cy" values="80;120" dur="1.4s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0" dur="1.4s" repeatCount="indefinite"/>
+  </circle>
+
+  <circle cx="75" cy="105" r="2.2" fill="#FFD700">
+    <animate attributeName="cy" values="85;120" dur="1s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="1;0" dur="1s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Floating Sparkles (Top Stars) -->
+  <circle cx="25" cy="30" r="1.5" fill="#FF4ECD">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="95" cy="35" r="1.5" fill="#00E5FF">
+    <animate attributeName="opacity" values="0.2;1;0.2" dur="2.2s" repeatCount="indefinite"/>
+  </circle>
+
+  <!-- Rocket Group (Translates vertically for bobbing effect) -->
+  <g>
+    <animateTransform attributeName="transform"
+                      type="translate"
+                      values="0,0; 0,-5; 0,0"
+                      dur="2.5s"
+                      repeatCount="indefinite"/>
+
+    <!-- Outer Flame (Flickering) -->
+    <path d="M54 75 L60 94 L66 75 Z" fill="url(#flameGrad)">
+      <animate attributeName="d"
+               values="M54 75 L60 94 L66 75 Z; M55 75 L60 86 L65 75 Z; M54 75 L60 94 L66 75 Z"
+               dur="0.15s"
+               repeatCount="indefinite"/>
+    </path>
+
+    <!-- Inner Flame (Flickering) -->
+    <path d="M57 75 L60 85 L63 75 Z" fill="#FFD700">
+      <animate attributeName="d"
+               values="M57 75 L60 85 L63 75 Z; M58 75 L60 80 L62 75 Z; M57 75 L60 85 L63 75 Z"
+               dur="0.15s"
+               repeatCount="indefinite"/>
+    </path>
+
+    <!-- Left Fin -->
+    <path d="M50 56 C42 60 38 70 38 76 L48 76 C50 76 50 74 50 72 Z" fill="url(#finGrad)"/>
+
+    <!-- Right Fin -->
+    <path d="M70 56 C78 60 82 70 82 76 L72 76 C70 76 70 74 70 72 Z" fill="url(#finGrad)"/>
+
+    <!-- Rocket Body -->
+    <path d="M50 42 C50 30 60 20 60 20 C60 20 70 30 70 42 L70 72 C70 74 68 76 66 76 L54 76 C52 76 50 74 50 72 Z" fill="url(#bodyGrad)"/>
+
+    <!-- Window Ring -->
+    <circle cx="60" cy="48" r="7" fill="url(#windowRingGrad)"/>
+
+    <!-- Window Glass -->
+    <circle cx="60" cy="48" r="5" fill="#1a1b27"/>
+
+  </g>
+
+  <!-- Definitions -->
+  <defs>
+
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0" y1="0" x2="120" y2="120">
+      <stop offset="0%" stop-color="#1a1b27"/>
+      <stop offset="50%" stop-color="#24283b"/>
+      <stop offset="100%" stop-color="#1f2335"/>
+    </linearGradient>
+
+    <!-- Glow -->
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse"
+                    gradientTransform="translate(60 72) rotate(90) scale(45)">
+      <stop stop-color="#00E5FF" stop-opacity="0.25"/>
+      <stop offset="1" stop-color="#00E5FF" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Rocket Body Gradient -->
+    <linearGradient id="bodyGrad" x1="50" y1="20" x2="70" y2="76">
+      <stop offset="0%" stop-color="#00E5FF"/>
+      <stop offset="100%" stop-color="#7C4DFF"/>
+    </linearGradient>
+
+    <!-- Rocket Fins Gradient -->
+    <linearGradient id="finGrad" x1="38" y1="56" x2="82" y2="76">
+      <stop offset="0%" stop-color="#FF4ECD"/>
+      <stop offset="100%" stop-color="#7C4DFF"/>
+    </linearGradient>
+
+    <!-- Flame Gradient -->
+    <linearGradient id="flameGrad" x1="60" y1="75" x2="60" y2="94">
+      <stop offset="0%" stop-color="#FF3E6C"/>
+      <stop offset="100%" stop-color="#FFD700"/>
+    </linearGradient>
+
+    <!-- Window Ring Gradient -->
+    <linearGradient id="windowRingGrad" x1="53" y1="41" x2="67" y2="55">
+      <stop offset="0%" stop-color="#00FFA3"/>
+      <stop offset="100%" stop-color="#00E5FF"/>
+    </linearGradient>
+
+  </defs>
+</svg>

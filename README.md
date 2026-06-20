@@ -1,4 +1,4 @@
-## <img src="assets/activities.svg"  width="25"> <b>Express.js & TypeScript Server Setup Steps  </b>
+<!-- ## <img src="assets/activities.svg"  width="25"> <b>Express.js & TypeScript Server Setup Steps  </b>
 
 ### 1. Project Initialization  
 - `npm init -y` → auto‑generate `package.json`  
@@ -58,17 +58,22 @@ app.listen(port, () => {
 ```
 
 ### 7. Development Tools  
-- Install `tsx` → `npm i -D tsx`  
+- Install `tsc` → `npx tsc`  
 - Run dev server → `npm run dev`  
 - Server will run at: `http://localhost:${port}` 
 
-### 8. Neon Database Initialization  
+### 8. PostgreSQL Client Setup  
 
 ```bash
-npx neonctl@latest init
+npm install pg
 ```
 
-### 9. Environment Variables  
+### 9. PostgreSQL Type Definitions  
+```bash
+npm i --save-dev @types/pg
+```
+
+### 10. Environment Variables  
 - Install `dotenv` → `npm i dotenv`  
 - Create `.env` file in root → store secrets/config  
 
@@ -111,4 +116,4 @@ src/
  ├── routes/
  ├── service/
  ├── types/
- └── utility/
+ └── utility/ -->
