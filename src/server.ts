@@ -36,8 +36,8 @@ const initDB = async () => {
     } catch (error) {
         console.log(error);
     }
-// }
-// initDB();
+}
+initDB();
 
 // Root route ==> "GET" 
 app.get("/", (req: Request, res: Response) => {
