@@ -1,4 +1,29 @@
-<!-- ## <img src="assets/activities.svg"  width="25"> <b>Express.js & TypeScript Server Setup Steps  </b>
+## <img src="assets/activities.svg"  width="25"> <b>Express.js & TypeScript Server Setup Steps  </b>
+
+
+## <img src="assets/tech_stack.svg" width="30"> Tech Stack
+
+![Express](https://img.shields.io/badge/Express-v5.2.1-000000?style=for-the-badge&logo=express&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-v4.22.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v8.22.0-336791?style=for-the-badge&logo=postgresql&logoColor=white)
+![Dotenv](https://img.shields.io/badge/Dotenv-v17.4.2-00C853?style=for-the-badge&logo=dotenv&logoColor=white)
+![TSX](https://img.shields.io/badge/TSX-v4.22.4-FF6F00?style=for-the-badge&logo=typescript&logoColor=white)
+![Types/Express](https://img.shields.io/badge/@types/express-v5.0.6-4285F4?style=for-the-badge&logo=typescript&logoColor=white)
+![Types/PG](https://img.shields.io/badge/@types/pg-v8.20.0-4285F4?style=for-the-badge&logo=typescript&logoColor=white)
+
+
+## <img src="https://img.icons8.com/color/48/about.png" height="32" align="center" /> <b>Project Overview & Goals</b>
+
+This project is a **scalable Express.js API architecture** built with **TypeScript** and integrated with **PostgreSQL** for persistent data storage.  
+It serves as a blueprint for building production‑ready backend applications with clean structure, modular code, and proper error handling.
+
+### 🎯 Goals
+- **[Express.js API](ca://s?q=Express.js_API_goal)** → Provide a structured RESTful API with CRUD operations.  
+- **[TypeScript integration](ca://s?q=TypeScript_integration_goal)** → Ensure type safety, maintainability, and developer productivity.  
+- **[PostgreSQL database](ca://s?q=PostgreSQL_database_goal)** → Use relational schema for secure and efficient data management.  
+- **[Error handling](ca://s?q=Error_handling_goal)** → Implement proper `try/catch` blocks with meaningful responses (200, 404, 500).  
+- **[Scalable architecture](ca://s?q=Scalable_architecture_goal)** → Follow clean project structure for future extensions.  
+- **[Environment configuration](ca://s?q=Environment_configuration_goal)** → Manage secrets and configs via `.env` and `dotenv`.  
 
 ### 1. Project Initialization  
 - `npm init -y` → auto‑generate `package.json`  
@@ -77,6 +102,18 @@ npm i --save-dev @types/pg
 - Install `dotenv` → `npm i dotenv`  
 - Create `.env` file in root → store secrets/config  
 
+
+### 11. Database Setup (Neon PostgreSQL)
+
+This project uses **Neon cloud-hosted PostgreSQL** as the database.Connection is managed via `pg` client and environment variables stored in `.env`.
+
+```ts
+// Initialize Pool with Neon cloud-hosted PostgreSQL connection
+const pool = new Pool({
+    connectionString: config.connection_string,
+});
+```
+
 --- 
 
 
@@ -101,19 +138,3 @@ npm i --save-dev @types/pg
     <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white"/>
   </a>
 </p>
-
-
-git add .
-git commit -m "docs(readme): add Author section with tagline and social badges"
-git push
-
-
-📂 Repo Structure Suggestion
-src/
- ├── config/
- ├── controller/
- ├── database/
- ├── routes/
- ├── service/
- ├── types/
- └── utility/ -->

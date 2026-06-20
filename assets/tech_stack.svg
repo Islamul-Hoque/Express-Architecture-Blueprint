@@ -1,0 +1,15 @@
+<svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="120" height="120" rx="20" fill="#000000"/>
+
+  <!-- Left angle bracket -->
+  <text x="25" y="70" font-size="50" fill="#00C853" font-family="monospace">&lt;</text>
+  <!-- Slash -->
+  <text x="50" y="70" font-size="50" fill="#FFD54F" font-family="monospace">/</text>
+  <!-- Right angle bracket -->
+  <text x="70" y="70" font-size="50" fill="#FF6F00" font-family="monospace">&gt;</text>
+
+  <!-- Animation: glowing effect -->
+  <animateTransform attributeName="transform" attributeType="XML"
+    type="scale" values="1;1.05;1" dur="2s" repeatCount="indefinite"/>
+</svg>
