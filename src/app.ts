@@ -10,9 +10,6 @@ app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
 
-
-
-
 // Root route ==> "GET" 
 app.get("/", (req: Request, res: Response) => {
     res.status(200).json({
