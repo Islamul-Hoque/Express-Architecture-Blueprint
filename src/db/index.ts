@@ -6,9 +6,11 @@ export const pool = new Pool({
     connectionString: config.connection_string,
 });
 
-// Setup PostgreSQL schema and create 'users' table if it doesn't exist
+// Setup PostgreSQL schema and create table if it doesn't exist
 export const initDB = async () => {
     try {
+
+        // create 'users' table
         await pool.query(`
         CREATE TABLE IF NOT EXISTS users(
         id SERIAL PRIMARY KEY,
@@ -24,6 +26,21 @@ export const initDB = async () => {
         `)
         console.log("Database connected successfully!");
 
+        // create 'profile' table
+        await pool.query(`
+        CREATE TABLE IF NOT EXISTS profiles(
+        id SERIAL PRIMARY KEY,
+        user_id INT UNIQUE REFERENCES users(id) ON DELETE CASCADE,
+
+        bio TEXT,
+        address TEXT,
+        phone VARCHAR(15),
+        gender VARCHAR(10),
+
+        created_at TIMESTAMP DEFAULT NOW(),
+        updated_at TIMESTAMP DEFAULT NOW()
+        )
+        `)
     } catch (error) {
         console.log(error);
     }

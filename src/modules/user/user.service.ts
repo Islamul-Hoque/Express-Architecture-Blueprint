@@ -25,7 +25,8 @@ const getAllUsersFromDB = async () => {
 // "GET" Single user
 const getSingleUserFromDB = async (id: string) => {
         const result = await pool.query(`
-            SELECT * FROM users WHERE id=$1  
+            SELECT * FROM users 
+            WHERE id=$1  
         `, [id],
         );
     return result;
@@ -52,7 +53,8 @@ const updateUserFromDB = async (payload: IUser, id: string) => {
 // "DELETE" a user
 const deleteUserFromDB = async (id: string) => {
     const result = await pool.query( `
-        DELETE FROM users WHERE id=$1 
+        DELETE FROM users 
+        WHERE id=$1 
     `,
     [id],
     );
