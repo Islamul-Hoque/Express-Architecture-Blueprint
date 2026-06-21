@@ -1,7 +1,8 @@
 import { pool } from "../../db";
+import type { IUser } from "./user.interface";
 
-
-const createUserIntoDB = async (payload: any) => {
+// New user Create ==> "POST" 
+const createUserIntoDB = async (payload: IUser) => {
     const { name, email, password, age } = payload;
 
     const result = await pool.query(`
@@ -13,7 +14,7 @@ const createUserIntoDB = async (payload: any) => {
     return result;
 };
 
-
+// "GET" All User
 const getAllUsersFromDB = async () => {
     const result = await pool.query(`
         SELECT * FROM users  
@@ -21,6 +22,7 @@ const getAllUsersFromDB = async () => {
     return result;
 };
 
+// "GET" Single user
 const getSingleUserFromDB = async (id: string) => {
         const result = await pool.query(`
             SELECT * FROM users WHERE id=$1  
@@ -29,6 +31,7 @@ const getSingleUserFromDB = async (id: string) => {
     return result;
 };
 
+// Update user info using "PUT" method
 const updateUserFromDB = async (payload: IUser, id: string) => {
     const { name, password, age, is_active } = payload;
 
@@ -46,6 +49,7 @@ const updateUserFromDB = async (payload: IUser, id: string) => {
     return result;
 };
 
+// "DELETE" a user
 const deleteUserFromDB = async (id: string) => {
     const result = await pool.query( `
         DELETE FROM users WHERE id=$1 

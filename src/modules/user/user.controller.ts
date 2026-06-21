@@ -4,8 +4,6 @@ import { userService } from "./user.service";
 
 // New user Create ==> "POST" 
 const createUser = async (req: Request, res: Response) => {
-    const { name, email, password, age } = req.body
-
     try {
         const result = await userService.createUserIntoDB(req.body);
 
@@ -27,6 +25,8 @@ const createUser = async (req: Request, res: Response) => {
 const getAllUsers = async (req: Request, res: Response) => {
     try {
         const result = await userService.getAllUsersFromDB()
+
+        // Response
         res.status(200).json({
             success: true,
             message: "Users retrieved successfully!",
@@ -73,7 +73,6 @@ const getSingleUser = async (req: Request, res: Response) => {
 // Update user info using "PUT" method
 const updateUser = async (req: Request, res: Response) => {
     const { id } = req.params;
-    const { name, password, age, is_active } = req.body;
 
     try {
         const result = await userService.updateUserFromDB(req.body, id as string);
