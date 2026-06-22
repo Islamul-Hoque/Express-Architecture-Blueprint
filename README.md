@@ -5,12 +5,11 @@
 <div align="center">
 
 ![Express](https://img.shields.io/badge/Express-v5.2.1-000000?style=for-the-badge&logo=express&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-v20.x-339933?style=for-the-badge&logo=node.js&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-v4.22.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v8.22.0-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Dotenv](https://img.shields.io/badge/Dotenv-v17.4.2-00C853?style=for-the-badge&logo=dotenv&logoColor=white)
 ![TSX](https://img.shields.io/badge/TSX-v4.22.4-FF6F00?style=for-the-badge&logo=typescript&logoColor=white)
-![Types/Express](https://img.shields.io/badge/@types/express-v5.0.6-4285F4?style=for-the-badge&logo=typescript&logoColor=white)
-![Types/PG](https://img.shields.io/badge/@types/pg-v8.20.0-4285F4?style=for-the-badge&logo=typescript&logoColor=white)
 
 </div>
 
@@ -120,6 +119,24 @@ const pool = new Pool({
 
 ```bash
 npm i bcryptjs
+```
+
+### 13. JWT Installation for Authentication
+
+```bash
+npm i jsonwebtoken
+```
+
+### 14. JWT Type Definitions
+
+```bash
+npm i --save-dev @types/jsonwebtoken
+```
+
+### 15. Generate JWT Secret Key
+
+```bash
+node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 ```
 
 
