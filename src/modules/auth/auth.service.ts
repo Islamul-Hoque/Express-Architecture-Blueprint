@@ -20,15 +20,15 @@ const loginUserIntoDB = async (payload: {
         throw new Error("Invalid email or password!");
     }
 
-    // // 2. Compare the password -> Done
-    // const user = userData.rows[0];
-    // const matchPassword = await bcrypt.compare(password, user.password);
+    // 2. Compare the password -> Done
+    const user = userData.rows[0];
+    const matchPassword = await bcrypt.compare(password, user.password);
 
-    // if (!matchPassword) {
-    //     throw new Error("Invalid Credentials!");
-    // }
+    if (!matchPassword) {
+        throw new Error("Invalid Credentials!");
+    }
 
-    // //3. Generate Token
+    //3. Generate Token
     // const jwtPayload = {
     //     id: user.id,
     //     name: user.name,
