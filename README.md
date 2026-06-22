@@ -1,5 +1,17 @@
-## <img src="assets/activities.svg"  width="25"> <b>Express.js & TypeScript Server Setup Steps  </b>
+## <img src="assets/activities.svg"  width="25"> <b>Express Architecture Blueprint using Modular Pattern, PostgreSQL, JWT Authentication & Role‑Based Authorization</b>
 
+### <img src="https://img.icons8.com/color/48/about.png" height="32" align="center" /> Project Overview & Goals
+
+This project is a **scalable Express.js API architecture** built with **TypeScript** and integrated with **PostgreSQL** for persistent data storage.  
+It serves as a blueprint for building production‑ready backend applications with clean structure, modular code, and proper error handling.
+
+### 🎯 Goals
+- **[Express.js API](ca://s?q=Express.js_API_goal)** → Provide a structured RESTful API with CRUD operations.  
+- **[TypeScript integration](ca://s?q=TypeScript_integration_goal)** → Ensure type safety, maintainability, and developer productivity.  
+- **[PostgreSQL database](ca://s?q=PostgreSQL_database_goal)** → Use relational schema for secure and efficient data management.  
+- **[Error handling](ca://s?q=Error_handling_goal)** → Implement proper `try/catch` blocks with meaningful responses (200, 404, 500).  
+- **[Scalable architecture](ca://s?q=Scalable_architecture_goal)** → Follow clean project structure for future extensions.  
+- **[Environment configuration](ca://s?q=Environment_configuration_goal)** → Manage secrets and configs via `.env` and `dotenv`.  
 
 ## <img src="assets/tech_stack.svg" width="30"> Tech Stack
 <div align="center">
@@ -13,18 +25,8 @@
 
 </div>
 
-## <img src="https://img.icons8.com/color/48/about.png" height="32" align="center" /> <b>Project Overview & Goals</b>
 
-This project is a **scalable Express.js API architecture** built with **TypeScript** and integrated with **PostgreSQL** for persistent data storage.  
-It serves as a blueprint for building production‑ready backend applications with clean structure, modular code, and proper error handling.
-
-### 🎯 Goals
-- **[Express.js API](ca://s?q=Express.js_API_goal)** → Provide a structured RESTful API with CRUD operations.  
-- **[TypeScript integration](ca://s?q=TypeScript_integration_goal)** → Ensure type safety, maintainability, and developer productivity.  
-- **[PostgreSQL database](ca://s?q=PostgreSQL_database_goal)** → Use relational schema for secure and efficient data management.  
-- **[Error handling](ca://s?q=Error_handling_goal)** → Implement proper `try/catch` blocks with meaningful responses (200, 404, 500).  
-- **[Scalable architecture](ca://s?q=Scalable_architecture_goal)** → Follow clean project structure for future extensions.  
-- **[Environment configuration](ca://s?q=Environment_configuration_goal)** → Manage secrets and configs via `.env` and `dotenv`.  
+## <img src="assets/activities.svg"  width="25"> <b>Express.js & TypeScript Server Setup Steps  </b>
 
 ### 1. Project Initialization  
 - `npm init -y` → auto‑generate `package.json`  
