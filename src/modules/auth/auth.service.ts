@@ -17,7 +17,7 @@ const loginUserIntoDB = async (payload: {
 
     // Email not found
     if (userData.rows.length === 0) {
-        throw new Error("Invalid email or password!");
+        throw new Error("Invalid Credentials!");
     }
 
     // 2. Compare the password -> Done
@@ -29,16 +29,16 @@ const loginUserIntoDB = async (payload: {
     }
 
     //3. Generate Token
-    // const jwtPayload = {
-    //     id: user.id,
-    //     name: user.name,
-    //     is_active: user.is_active,
-    //     email: user.email,
-    // };
+    const jwtPayload = {
+        id: user.id,
+        name: user.name,
+        is_active: user.is_active,
+        email: user.email,
+    };
 
-    // const accessToken = jwt.sign(jwtPayload, config.secret as string, {
-    //     expiresIn: "1d",
-    // });
+    const accessToken = jwt.sign(jwtPayload, config.secret as string, {
+        expiresIn: "1d",
+    });
 
     return { accessToken };
 };
