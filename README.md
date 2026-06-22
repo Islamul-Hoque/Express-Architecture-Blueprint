@@ -2,6 +2,7 @@
 
 
 ## <img src="assets/tech_stack.svg" width="30"> Tech Stack
+<div align="center">
 
 ![Express](https://img.shields.io/badge/Express-v5.2.1-000000?style=for-the-badge&logo=express&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/TypeScript-v4.22.4-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
@@ -11,6 +12,7 @@
 ![Types/Express](https://img.shields.io/badge/@types/express-v5.0.6-4285F4?style=for-the-badge&logo=typescript&logoColor=white)
 ![Types/PG](https://img.shields.io/badge/@types/pg-v8.20.0-4285F4?style=for-the-badge&logo=typescript&logoColor=white)
 
+</div>
 
 ## <img src="https://img.icons8.com/color/48/about.png" height="32" align="center" /> <b>Project Overview & Goals</b>
 
@@ -113,6 +115,13 @@ const pool = new Pool({
     connectionString: config.connection_string,
 });
 ```
+
+### 12. Bcrypt.js Installation for Password Hashing
+
+```bash
+npm i bcryptjs
+```
+
 
 --- 
 
