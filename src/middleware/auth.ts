@@ -8,7 +8,7 @@ const auth = (...roles: ROLES[]) => {
     return async (req: Request, res: Response, next: NextFunction) => {
     
         try {
-        //     const token = req.headers.authorization;
+            const token = req.headers.authorization;
 
         //     // 1. Check if the token exists
         //     if (!token) {
