@@ -50,14 +50,14 @@ const auth = (...roles: ROLES[]) => {
                 });
             }
 
-        //     if (roles.length && !roles.includes(user.role)) {
-        //         res.status(403).json({
-        //             success: false,
-        //             message: "Forbidden!!,This role have no access!",
-        //         });
-        //     }
+            if (roles.length && !roles.includes(user.role)) {
+                res.status(403).json({
+                    success: false,
+                    message: "Access denied. Your role does not have permission to access this resource.",
+                });
+            }
 
-        //     req.user = decoded; // req : { user : {} }
+            req.user = decoded; // req : { user : {} }
 
             next();
         } catch (error) {
