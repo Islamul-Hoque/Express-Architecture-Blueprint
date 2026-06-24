@@ -8,9 +8,10 @@ const auth = (...roles: ROLES[]) => {
     return async (req: Request, res: Response, next: NextFunction) => {
     
         try {
+            // 1. Extract token from request headers
             const token = req.headers.authorization;
 
-            // 1. Check if the token exists
+            // 2. Check if the token exists
             if (!token) {
                 res.status(401).json({
                     success: false,
@@ -18,13 +19,13 @@ const auth = (...roles: ROLES[]) => {
                 });
             }
 
-            // 2. Verify the token
+            // 3. Verify and decode the JWT token
             const decoded = jwt.verify(
                 token as string,
                 config.secret as string,
             ) as JwtPayload;
 
-            // 3. Find the user into database
+            // 4. Query database to find user by decoded email
             const userData = await pool.query( `
                 SELECT * FROM users 
                 WHERE email=$1   
@@ -32,6 +33,7 @@ const auth = (...roles: ROLES[]) => {
                 [decoded.email],
             );
 
+            // 5. Handle case when user not found
             if (userData.rows.length === 0) {
                 res.status(404).json({
                     success: false,
@@ -39,10 +41,10 @@ const auth = (...roles: ROLES[]) => {
                 });
             }
 
-            // namespace Express ==> user property create
+            // 6. Extract user record from query result
             const user = userData.rows[0];
 
-            // 4. If the user active or not?
+            // 7. Check if user account is active
             if (!user?.is_active) {
                 res.status(403).json({
                     success: false,
@@ -50,6 +52,7 @@ const auth = (...roles: ROLES[]) => {
                 });
             }
 
+            // 8. Enforce role-based access control
             if (roles.length && !roles.includes(user.role)) {
                 res.status(403).json({
                     success: false,
@@ -57,8 +60,10 @@ const auth = (...roles: ROLES[]) => {
                 });
             }
 
+            // 9. Attach decoded payload to request object for downstream usage
             req.user = decoded; // req : { user : {} }
 
+            // 10. Pass control to next middleware
             next();
         } catch (error) {
             next(error);
