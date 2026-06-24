@@ -6,7 +6,7 @@ import type { ROLES } from "../types";
 
 const auth = (...roles: ROLES[]) => {
     return async (req: Request, res: Response, next: NextFunction) => {
-    
+
         try {
             // 1. Extract token from request headers
             const token = req.headers.authorization;
