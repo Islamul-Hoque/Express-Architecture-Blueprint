@@ -39,16 +39,16 @@ const auth = (...roles: ROLES[]) => {
                 });
             }
 
-        //     // namespace Express ==> user property create
-        //     const user = userData.rows[0];
+            // namespace Express ==> user property create
+            const user = userData.rows[0];
 
-        //     // 4. If the user active or not?
-        //     if (!user?.is_active) {
-        //         res.status(403).json({
-        //             success: false,
-        //             message: "Forbidden!!",
-        //         });
-        //     }
+            // 4. If the user active or not?
+            if (!user?.is_active) {
+                res.status(403).json({
+                    success: false,
+                    message: "Access denied. User account is inactive.",
+                });
+            }
 
         //     if (roles.length && !roles.includes(user.role)) {
         //         res.status(403).json({
