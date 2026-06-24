@@ -10,13 +10,13 @@ const auth = (...roles: ROLES[]) => {
         try {
             const token = req.headers.authorization;
 
-        //     // 1. Check if the token exists
-        //     if (!token) {
-        //         res.status(401).json({
-        //             success: false,
-        //             message: "Unauthorized access!!",
-        //         });
-        //     }
+            // 1. Check if the token exists
+            if (!token) {
+                res.status(401).json({
+                    success: false,
+                    message: "Access denied. Authorization token is missing.",
+                });
+            }
 
         //     // 2. Verify the token
         //     const decoded = jwt.verify(
