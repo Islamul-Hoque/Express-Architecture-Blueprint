@@ -1,34 +1,36 @@
-import express, { type Application, type NextFunction, type Request, type Response } from "express";
+import express, { type Application, type Request, type Response } from "express";
 import { userRoute } from "./modules/user/user.route";
 import { profileRoute } from "./modules/profile/profile.route";
 import { authRoute } from "./modules/auth/auth.route";
-import fs from "fs";
 import logger from "./middleware/logger";
 
 const app: Application = express();
 
-// Parse JSON payloads from incoming requests
+// Built-in middleware: JSON, text, and URL-encoded body parsing
 app.use(express.json());
 app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
 
-
-// Logger middleware
+// Custom logger middleware
 app.use(logger);
 
-// Root route ==> "GET" 
+// Root route handler (GET)
 app.get("/", (req: Request, res: Response) => {
     res.status(200).json({
-        status: "success",
-        message: "Express Architecture Blueprint API is live and ready to handle requests",
-        version: "1.0.0",
-        author: "Islamul Hoque"
-    });
-});
+        "status": true,
+        "message": "Express Architecture Blueprint API is live and ready to handle requests",
+        "version": "1.0.0",
+        "author": "Islamul Hoque",
+        "timestamp": "Tuesday, 23 Jun 2026, 9:07 AM BST",
+        "environment": "development",
+        "uptime": "15234ms",
+        "server": "Express.js & TypeScript",
+        "docs": "/api/docs",
+        "health": "healthy"
+    })
+})
 
-
-
-// User Router
+// Application routing setup
 app.use("/api/users", userRoute)
 app.use("/api/profile", profileRoute);
 app.use("/api/auth", authRoute);
