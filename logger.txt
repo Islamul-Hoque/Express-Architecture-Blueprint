@@ -91,3 +91,5 @@ Method: GET | URL: /api/users | Status: 403 | Duration: 360ms | Time: Wednesday,
 Method: GET | URL: / | Status: 403 | Duration: 2721ms | Time: Wednesday, 24 Jun 2026, 7:41 pm
 Method: GET | URL: / | Status: 200 | Duration: 3136ms | Time: Wednesday, 24 Jun 2026, 7:42 pm
 Method: POST | URL: /login | Status: 200 | Duration: 2732ms | Time: Wednesday, 24 Jun 2026, 8:16 pm
+Method: POST | URL: /login | Status: 200 | Duration: 2681ms | Time: Wednesday, 24 Jun 2026, 8:56 pm
+Method: POST | URL: /login | Status: 200 | Duration: 2176ms | Time: Wednesday, 24 Jun 2026, 8:59 pm

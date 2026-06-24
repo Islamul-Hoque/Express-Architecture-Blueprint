@@ -141,6 +141,18 @@ npm i --save-dev @types/jsonwebtoken
 node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 ```
 
+### 16. Cookie Parser Installation
+
+```bash
+npm i cookie-parser
+```
+
+### 17. Cookie Parser Type Definitions
+
+```bash
+npm i --save-dev @types/cookie-parser
+```
+
 
 --- 
 
