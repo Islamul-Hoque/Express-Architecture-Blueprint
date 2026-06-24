@@ -19,6 +19,9 @@ const config = {
     // Token expiry values
     access_token_expires_in: process.env.ACCESS_TOKEN_EXPIRES_IN,
     refresh_token_expires_in: process.env.REFRESH_TOKEN_EXPIRES_IN,
+
+    // Environment mode 
+    node_env: process.env.NODE_ENV,
 };
 
 export default config;

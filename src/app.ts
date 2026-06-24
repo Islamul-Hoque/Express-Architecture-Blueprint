@@ -5,6 +5,7 @@ import { authRoute } from "./modules/auth/auth.route";
 import logger from "./middleware/logger";
 import CookieParser from "cookie-parser";
 import cors from "cors";
+import globalErrorHandler from "./middleware/globalErrorHandler";
 
 const app: Application = express();
 
@@ -15,13 +16,13 @@ app.use(express.text());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(
-  cors({
-    origin: ["http://localhost:3000", "https://express-architecture-blueprint.app.vercel"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"], 
-    credentials: true,
-    maxAge: 600,
-  }),
+    cors({
+        origin: ["http://localhost:3000", "https://express-architecture-blueprint.app.vercel"],
+        methods: ["GET", "POST", "PUT", "DELETE"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+        credentials: true,
+        maxAge: 600,
+    }),
 );
 
 
@@ -49,4 +50,6 @@ app.use("/api/users", userRoute)
 app.use("/api/profile", profileRoute);
 app.use("/api/auth", authRoute);
 
+// Global Error Handling Middleware
+app.use(globalErrorHandler);
 export default app;

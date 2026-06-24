@@ -45,8 +45,7 @@ const loginUserIntoDB = async (payload: {
 
     // 5. Generate refresh token (longer‑lived)
     const refreshToken = jwt.sign(jwtPayload, config.refresh_secret as string, {
-        // expiresIn: "90d",
-        expiresIn: config.access_token_expires_in as string,
+        expiresIn: "90d",
     });
 
     // 6. Return both tokens
