@@ -5,10 +5,19 @@ const loginUser = async (req: Request, res: Response) => {
     try {
         const result = await authService.loginUserIntoDB(req.body);
 
+        // Refresh Token
+        const { refreshToken } = result;
+
+        res.cookie("refreshToken", refreshToken, {
+            secure: false, // In production => True
+            httpOnly: true,
+            sameSite: "lax",
+        });
+
         // Response
         res.status(200).json({
             success: true,
-            message: "User retrieved successfully!",
+            message: "User login successfully!",
             data: result,
         });
     } catch (error: any) {
@@ -19,6 +28,9 @@ const loginUser = async (req: Request, res: Response) => {
         });
     }
 };
+
+
+
 
 export const authController = {
     loginUser,
