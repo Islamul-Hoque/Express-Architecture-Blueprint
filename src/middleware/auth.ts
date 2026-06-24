@@ -32,12 +32,12 @@ const auth = (...roles: ROLES[]) => {
                 [decoded.email],
             );
 
-        //     if (userData.rows.length === 0) {
-        //         res.status(404).json({
-        //             success: false,
-        //             message: "User not found!",
-        //         });
-        //     }
+            if (userData.rows.length === 0) {
+                res.status(404).json({
+                    success: false,
+                    message: "No user account associated with this token.",
+                });
+            }
 
         //     // namespace Express ==> user property create
         //     const user = userData.rows[0];
