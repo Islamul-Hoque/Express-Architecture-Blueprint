@@ -18,11 +18,11 @@ const auth = (...roles: ROLES[]) => {
                 });
             }
 
-        //     // 2. Verify the token
-        //     const decoded = jwt.verify(
-        //         token as string,
-        //         config.secret as string,
-        //     ) as JwtPayload;
+            // 2. Verify the token
+            const decoded = jwt.verify(
+                token as string,
+                config.secret as string,
+            ) as JwtPayload;
 
         //     // 3. Find the user into database
         //     const userData = await pool.query( `
