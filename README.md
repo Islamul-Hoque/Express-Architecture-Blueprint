@@ -153,6 +153,16 @@ npm i cookie-parser
 npm i --save-dev @types/cookie-parser
 ```
 
+### 18. CORS Middleware Installation
+
+```bash
+npm i cors
+```
+
+### 19. CORS Type Definitions
+```bash
+npm i --save-dev @types/cors
+```
 
 --- 
 

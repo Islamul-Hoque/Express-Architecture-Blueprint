@@ -33,6 +33,7 @@ const refreshToken = async (req: Request, res: Response) => {
     try {
         const result = await authService.generateFreshToken( req.cookies.refreshToken, );
 
+        // Response
         res.status(200).json({
             success: true,
             message: "New access token issued successfully!",

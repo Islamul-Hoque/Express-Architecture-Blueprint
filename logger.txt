@@ -93,3 +93,12 @@ Method: GET | URL: / | Status: 200 | Duration: 3136ms | Time: Wednesday, 24 Jun 
 Method: POST | URL: /login | Status: 200 | Duration: 2732ms | Time: Wednesday, 24 Jun 2026, 8:16 pm
 Method: POST | URL: /login | Status: 200 | Duration: 2681ms | Time: Wednesday, 24 Jun 2026, 8:56 pm
 Method: POST | URL: /login | Status: 200 | Duration: 2176ms | Time: Wednesday, 24 Jun 2026, 8:59 pm
+Method: POST | URL: /refresh-token | Status: 200 | Duration: 2714ms | Time: Wednesday, 24 Jun 2026, 9:58 pm
+Method: POST | URL: /login | Status: 200 | Duration: 2636ms | Time: Wednesday, 24 Jun 2026, 10:02 pm
+Method: POST | URL: /login | Status: 200 | Duration: 358ms | Time: Wednesday, 24 Jun 2026, 10:02 pm
+Method: POST | URL: /login | Status: 200 | Duration: 354ms | Time: Wednesday, 24 Jun 2026, 10:02 pm
+Method: POST | URL: /login | Status: 200 | Duration: 351ms | Time: Wednesday, 24 Jun 2026, 10:02 pm
+Method: POST | URL: /login | Status: 200 | Duration: 357ms | Time: Wednesday, 24 Jun 2026, 10:02 pm
+Method: POST | URL: /refresh-token | Status: 200 | Duration: 249ms | Time: Wednesday, 24 Jun 2026, 10:02 pm
+Method: POST | URL: /refresh-token | Status: 200 | Duration: 250ms | Time: Wednesday, 24 Jun 2026, 10:02 pm
+Method: POST | URL: /refresh-token | Status: 200 | Duration: 2050ms | Time: Wednesday, 24 Jun 2026, 10:03 pm

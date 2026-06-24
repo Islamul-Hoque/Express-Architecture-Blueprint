@@ -6,10 +6,19 @@ dotenv.config({
 });
 
 const config = {
-    connection_string: process.env.CONNECTIONSTRING as string,
-    port: process.env.PORT,
+    // Database connection string
+    connection_string: process.env.DB_CONNECTION_STRING as string,
+
+    // Application port
+    port: Number(process.env.PORT),
+
+    // JWT secrets
     secret : process.env.JWT_SECRET,
     refresh_secret: process.env.JWT_REFRESH_SECRET,
+
+    // Token expiry values
+    access_token_expires_in: process.env.ACCESS_TOKEN_EXPIRES_IN,
+    refresh_token_expires_in: process.env.REFRESH_TOKEN_EXPIRES_IN,
 };
 
 export default config;

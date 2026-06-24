@@ -3,19 +3,20 @@ import config from "../../config";
 import { pool } from "./../../db/index";
 import jwt, { type JwtPayload } from "jsonwebtoken";
 
+// Login user into DB
 const loginUserIntoDB = async (payload: {
     email: string;
     password: string;
 }) => {
     const { email, password } = payload;
 
-    // 1. Check if the user exists
+    // 1. Check if user exists in database
     const userData = await pool.query(`
         SELECT * FROM users WHERE email=$1
     `, [email],
     );
 
-    // Email not found
+    // Handle case: when no user is found for the provided email
     if (userData.rows.length === 0) {
         throw new Error("Invalid email or password.");
     }
@@ -28,7 +29,7 @@ const loginUserIntoDB = async (payload: {
         throw new Error("Invalid email or password.");
     }
 
-    // 3. Generate access and refresh tokens
+    // 3. Prepare JWT payload with user info
     const jwtPayload = {
         id: user.id,
         name: user.name,
@@ -37,18 +38,22 @@ const loginUserIntoDB = async (payload: {
         email: user.email,
     };
 
+    // 4. Generate access token (short‑lived)
     const accessToken = jwt.sign(jwtPayload, config.secret as string, {
         expiresIn: "1d",
     });
 
+    // 5. Generate refresh token (longer‑lived)
     const refreshToken = jwt.sign(jwtPayload, config.refresh_secret as string, {
-        expiresIn: "1d",
+        // expiresIn: "90d",
+        expiresIn: config.access_token_expires_in as string,
     });
 
+    // 6. Return both tokens
     return { accessToken, refreshToken };
 };
 
-
+// Generate new access token using refresh token
 const generateFreshToken = async (token: string) => {
 
     // 1. Check if refresh token exists
@@ -81,7 +86,7 @@ const generateFreshToken = async (token: string) => {
         throw new Error("Access denied. User account is inactive.");
     }
 
-    // 5. Generate new access token
+    // 5. Generate JWT payload for new access token
     const jwtPayload = {
         id: user.id,
         name: user.name,
@@ -90,13 +95,14 @@ const generateFreshToken = async (token: string) => {
         email: user.email,
     };
 
+    // 6. Generate new access token
     const accessToken = jwt.sign(jwtPayload, config.secret as string, {
         expiresIn: "1d",
     });
 
+    // 7. Return only new access token
     return { accessToken };
 };
-
 
 export const authService = {
     loginUserIntoDB,
