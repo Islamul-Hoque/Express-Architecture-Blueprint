@@ -4,7 +4,9 @@
   "description": "- `npm init -y` → auto‑generate `package.json`  \r - `package.json` এ \r   - Remove: `\"type\": \"commonjs\"`\r   - `\"scripts\"` update:  \r     ```json\r     \"scripts\": {\r       \"dev\": \"tsx watch ./src/server.ts\"\r     }",
   "main": "index.js",
   "scripts": {
+    "start": "node dist/server.js",
     "dev": "tsx watch ./src/server.ts",
+    "build": "tsup",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -18,7 +20,8 @@
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
-    "pg": "^8.22.0"
+    "pg": "^8.22.0",
+    "tsup": "^8.5.1"
   },
   "devDependencies": {
     "@types/cookie-parser": "^1.4.10",
@@ -26,6 +29,7 @@
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/pg": "^8.20.0",
-    "tsx": "^4.22.4"
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
   }
 }
