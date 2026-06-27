@@ -340,13 +340,13 @@ npm i --save-dev @types/cors
 
 ---
 
-<!-- > [!NOTE]
+> [!NOTE]
 > ### ⚡ Quick Installation (All-in-One)
 > If you prefer to install all packages and type definitions in one go instead of step-by-step, run the following commands:
 > ```bash
 > npm i express pg bcryptjs jsonwebtoken cookie-parser cors dotenv tsup  
 > npm i -D typescript tsx @types/express @types/pg @types/jsonwebtoken @types/cookie-parser @types/cors  
-> ``` -->
+> ```
 
 ---
 
