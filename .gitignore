@@ -14,3 +14,7 @@ dist/
 .DS_Store
 .vscode/
 .vercel
+
+
+# private file
+README_old_version.md
