@@ -184,7 +184,7 @@ npm i --save-dev @types/cors
   <a href="https://codeforces.com/profile/Islamul-Hoque">
     <img src="https://img.shields.io/badge/Codeforces-1F8ACB?style=for-the-badge&logo=codeforces&logoColor=white"/>
   </a>
-  <a href="https://www.hackerrank.com/profile/islamulhoque2006">
+  <a href="https://www.hackerrank.com/profile/Islamul_Hoque">
     <img src="https://img.shields.io/badge/HackerRank-2EC866?style=for-the-badge&logo=hackerrank&logoColor=white"/>
   </a>
 </p>
