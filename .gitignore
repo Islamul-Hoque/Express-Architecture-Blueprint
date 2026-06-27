@@ -13,3 +13,4 @@ dist/
 # OS / Editor files
 .DS_Store
 .vscode/
+.vercel

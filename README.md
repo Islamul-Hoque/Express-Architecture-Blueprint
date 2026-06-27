@@ -22,8 +22,13 @@ It serves as a blueprint for building production‑ready backend applications wi
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-v8.22.0-336791?style=for-the-badge&logo=postgresql&logoColor=white)
 ![Dotenv](https://img.shields.io/badge/Dotenv-v17.4.2-00C853?style=for-the-badge&logo=dotenv&logoColor=white)
 ![TSX](https://img.shields.io/badge/TSX-v4.22.4-FF6F00?style=for-the-badge&logo=typescript&logoColor=white)
+![bcryptjs](https://img.shields.io/badge/bcryptjs-v3.0.3-00599C?style=for-the-badge&logo=javascript&logoColor=white)
+![cookie-parser](https://img.shields.io/badge/cookie--parser-v1.4.7-FF9800?style=for-the-badge&logo=express&logoColor=white)
+![CORS](https://img.shields.io/badge/CORS-v2.8.6-795548?style=for-the-badge&logo=express&logoColor=white)
+![jsonwebtoken](https://img.shields.io/badge/jsonwebtoken-v9.0.3-512DA8?style=for-the-badge&logo=jsonwebtokens&logoColor=white)
 
 </div>
+
 
 
 ## <img src="assets/activities.svg"  width="25"> <b>Express.js & TypeScript Server Setup Steps  </b>
