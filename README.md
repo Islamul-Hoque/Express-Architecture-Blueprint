@@ -1,6 +1,9 @@
-# <img src="assets/activities.svg" width="30" align="center" /> Express Architecture Blueprint
+## <img src="assets/activities.svg"  width="25"> <b>Express Architecture Blueprint using Modular Pattern, PostgreSQL, JWT Authentication & Role‑Based Authorization</b>
 
 > A scalable, production-ready Express.js API blueprint using Modular Pattern, PostgreSQL database persistence, JWT authentication, and Role-Based Authorization.
+
+> [!TIP]
+> **Live API Demo**: Access and test the live running API directly at [https://express-blueprint-api.vercel.app](https://express-blueprint-api.vercel.app)
 
 ---
 
@@ -10,23 +13,82 @@ Below is the workflow visualization representing the setup path:
 
 ```mermaid
 flowchart TD
-    %% Styling Configuration
-    classDef step fill:#f9f9f9,stroke:#333,stroke-width:1px,color:#111;
-    classDef highlight fill:#e6f4ea,stroke:#137333,stroke-width:2px,color:#137333;
+    %% Node Definitions & Shapes
+    Init(["📦 1. Project Initialization"])
+    TS["🛠️ 2. TypeScript Setup"]
+    Express["🌐 3. Express Setup"]
+    DB["🗄️ 4. Database Setup"]
+    Auth["🔐 5. Authentication & Middlewares"]
+    Deploy{{"🚀 6. Production Deployment"}}
 
-    Init["📦 1. Project Initialization"]:::step
-    TS["🛠️ 2. TypeScript Setup"]:::step
-    Express["🌐 3. Express Setup"]:::step
-    DB["🗄️ 4. Database Setup (PostgreSQL)"]:::step
-    Auth["🔐 5. Authentication (JWT & bcryptjs)"]:::step
-    Deploy["🚀 6. Production Deployment"]:::highlight
-
+    %% Flow Connections
     Init --> TS
     TS --> Express
     Express --> DB
     DB --> Auth
     Auth --> Deploy
+
+    %% Custom Styling
+    style Init fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81
+    style TS fill:#ecfeff,stroke:#06b6d4,stroke-width:2px,color:#083344
+    style Express fill:#fff7ed,stroke:#f97316,stroke-width:2px,color:#431407
+    style DB fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#052e16
+    style Auth fill:#faf5ff,stroke:#a855f7,stroke-width:2px,color:#3b0764
+    style Deploy fill:#fff1f2,stroke:#f43f5e,stroke-width:3px,color:#4c0519
+
+    %% Link Styling
+    linkStyle default stroke:#94a3b8,stroke-width:2px;
 ```
+
+## 🚀 Getting Started
+
+To get a local copy of this project up and running, follow these simple steps:
+
+### 1. Clone & Install Dependencies
+Clone the repository and install the npm packages:
+```bash
+git clone https://github.com/Islamul-Hoque/Express-Architecture-Blueprint.git  
+cd Express-Architecture-Blueprint  
+npm install  
+```
+
+### 2. Environment Configuration
+Create a `.env` file in the root directory and add the following configuration variables:
+```env
+DB_CONNECTION_STRING=Your_postgresql_connection_string_here
+PORT=3000
+JWT_SECRET=Your_jwt_secret_here
+JWT_REFRESH_SECRET=Your_jwt_refresh_secret_here
+ACCESS_TOKEN_EXPIRES_IN=1d
+REFRESH_TOKEN_EXPIRES_IN=90d
+NODE_ENV=production
+```
+
+---
+
+## 📁 Folder Structure
+
+Here is the directory structure layout showing the project configuration, source modules, and utilities:
+
+```
+Express-Architecture-Blueprint/
+├── assets/                     # SVG icons & static assets
+├── dist/                       # Compiled production-ready JavaScript
+├── src/                        # Main source directory
+│   ├── config/                 # App configurations (dotenv setup, etc.)
+│   ├── db/                     # Database connection pool setup
+│   ├── middleware/             # Express middlewares (auth guards, error handlers)
+│   ├── modules/                # Feature modules (controllers, routes, services)
+│   ├── types/                  # TypeScript interface and type definitions
+│   └── utility/                # Utility helpers (response generators, validators)
+├── .env                        # Local configuration environment variables
+├── tsconfig.json               # TypeScript configuration
+├── tsup.config.ts              # Bundle configuration (tsup)
+├── vercel.json                 # Vercel deployment configuration
+└── package.json                # Project dependencies and scripts
+```
+
+---
 
 ## 📋 Project Overview & Goals
 
@@ -42,7 +104,7 @@ This project provides a **scalable Express.js API architecture** built with **Ty
 
 ---
 
-## <img src="assets/tech_stack.svg" width="25" align="center" /> Tech Stack & Dependencies
+## <img src="assets/tech_stack.svg" width="30"> Tech Stack
 
 Here is a breakdown of the core technologies and dependencies used in this blueprint:
 
@@ -70,7 +132,7 @@ Here is a breakdown of the core technologies and dependencies used in this bluep
 
 ---
 
-## <img src="assets/activities.svg" width="25" align="center" /> Express.js & TypeScript Server Setup Steps
+## <img src="assets/activities.svg"  width="25"> <b>Express.js & TypeScript Server Setup Steps  </b>
 
 Follow this guided setup timeline to initialize, configure, and run the server architecture:
 
@@ -278,6 +340,16 @@ npm i --save-dev @types/cors
 
 ---
 
+<!-- > [!NOTE]
+> ### ⚡ Quick Installation (All-in-One)
+> If you prefer to install all packages and type definitions in one go instead of step-by-step, run the following commands:
+> ```bash
+> npm i express pg bcryptjs jsonwebtoken cookie-parser cors dotenv tsup  
+> npm i -D typescript tsx @types/express @types/pg @types/jsonwebtoken @types/cookie-parser @types/cors  
+> ``` -->
+
+---
+
 ## 🚀 Production Build & Deployment
 
 Follow the steps below to build the project and deploy it to Vercel.
@@ -381,7 +453,7 @@ vercel --prod
 
 ---
 
-## <img src="assets/about_me.svg" width="25" align="center" /> Author
+## <img src="assets/about_me.svg"  width="25"> Author 
 
 ### 👤 Islamul Hoque
 *MERN Stack Developer | Backend Enthusiast | Problem Solver*
