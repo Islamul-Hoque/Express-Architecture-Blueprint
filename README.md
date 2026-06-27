@@ -9,36 +9,91 @@
 
 ## 🗺️ Workflow Diagram
 
-Below is the workflow visualization representing the setup path:
+Below is the workflow visualization representing the request lifecycle through the system architecture:
 
 ```mermaid
 flowchart TD
     %% Node Definitions & Shapes
-    Init(["📦 1. Project Initialization"])
-    TS["🛠️ 2. TypeScript Setup"]
-    Express["🌐 3. Express Setup"]
-    DB["🗄️ 4. Database Setup"]
-    Auth["🔐 5. Authentication & Middlewares"]
-    Deploy{{"🚀 6. Production Deployment"}}
+    Client(["💻 Client Request"])
+    
+    subgraph App ["Express App Core (app.ts)"]
+        Parser["📦 Parsers Middleware<br>(CookieParser, JSON, URL-Encoded)"]
+        CORS["🛡️ CORS Middleware<br>(Cross-Origin Access Controls)"]
+        Logger["📝 Custom Logger Middleware<br>(logs/logger.txt)"]
+    end
+    
+    subgraph Routing ["Routing & Auth Layer"]
+        Router["🛣️ Router Module<br>(/api/users, /api/profile, /api/auth)"]
+        Auth["🔑 Auth Guard Middleware<br>(JWT verification & RBAC check)"]
+    end
+    
+    subgraph Logic ["Application Business Logic"]
+        Controller["🕹️ Controller Layer<br>(Handles request, calls Service)"]
+        Service["⚙️ Service Layer<br>(Processes business rules)"]
+    end
+    
+    subgraph Data ["Persistence & Helpers"]
+        DB[("🗄️ Neon PostgreSQL DB<br>(pg connection pool)")]
+        Utility["✨ Response Utility<br>(sendResponse)"]
+        Error["⚠️ Global Error Handler<br>(globalErrorHandler)"]
+    end
+
+    Deploy{{"🚀 Live Production Deployment<br>(Vercel)"}}
 
     %% Flow Connections
-    Init --> TS
-    TS --> Express
-    Express --> DB
-    DB --> Auth
-    Auth --> Deploy
+    Client --> Parser
+    Parser --> CORS
+    CORS --> Logger
+    Logger --> Router
+    
+    Router --> Auth
+    Auth -->|Valid Role/Token| Controller
+    Auth -->|Unauthorized/Invalid| Error
+    
+    Controller --> Service
+    Service --> DB
+    DB --> Service
+    Service --> Controller
+    
+    Controller -->|Success| Utility
+    Controller -->|Catch Error| Error
+    
+    Utility --> Client
+    Error --> Client
+    
+    App & Routing & Logic & Data -.-> Deploy
 
-    %% Custom Styling
-    style Init fill:#eef2ff,stroke:#6366f1,stroke-width:2px,color:#312e81
-    style TS fill:#ecfeff,stroke:#06b6d4,stroke-width:2px,color:#083344
-    style Express fill:#fff7ed,stroke:#f97316,stroke-width:2px,color:#431407
-    style DB fill:#f0fdf4,stroke:#22c55e,stroke-width:2px,color:#052e16
-    style Auth fill:#faf5ff,stroke:#a855f7,stroke-width:2px,color:#3b0764
-    style Deploy fill:#fff1f2,stroke:#f43f5e,stroke-width:3px,color:#4c0519
+    %% Custom Neutral Styling (Slate/Gray Palette)
+    style Client fill:#f8fafc,stroke:#475569,stroke-width:1.5px,color:#0f172a
+    style Deploy fill:#0f172a,stroke:#0f172a,stroke-width:2.5px,color:#ffffff
+    
+    style Parser fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#1e293b
+    style CORS fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#1e293b
+    style Logger fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#1e293b
+    
+    style Router fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#1e293b
+    style Auth fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#1e293b
+    
+    style Controller fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#1e293b
+    style Service fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#1e293b
+    
+    style DB fill:#f8fafc,stroke:#475569,stroke-width:1.5px,color:#0f172a
+    style Utility fill:#f1f5f9,stroke:#64748b,stroke-width:1.5px,color:#1e293b
+    style Error fill:#fff1f2,stroke:#f43f5e,stroke-width:1.5px,color:#9f1239
+
+    %% Subgraph Styling
+    style App fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,stroke-dasharray: 5 5
+    style Routing fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,stroke-dasharray: 5 5
+    style Logic fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,stroke-dasharray: 5 5
+    style Data fill:#f8fafc,stroke:#cbd5e1,stroke-width:1px,stroke-dasharray: 5 5
 
     %% Link Styling
-    linkStyle default stroke:#94a3b8,stroke-width:2px;
+    linkStyle default stroke:#64748b,stroke-width:2px;
+    linkStyle 5 stroke:#ef4444,stroke-width:2px;
+    linkStyle 10 stroke:#ef4444,stroke-width:2px;
 ```
+
+
 
 ## 🚀 Getting Started
 
